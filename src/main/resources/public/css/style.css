@@ -1,0 +1,118 @@
+body {
+  padding-top: 70px;
+  background-color:#f5f5f5;
+}
+
+/* login modal width */
+#loginModal > .modal-dialog {
+	width: 300px;
+}
+
+.panel-footer {
+	background-color: #cacaca;
+}
+
+.well {
+	background-color: white;
+}
+
+/* Date h2 left padding */
+.row h2 {
+	padding-left: 12px; 
+}
+
+/* Top navbar width by viewport size //disabled for now
+.navbar-wrapper .navbar .container {
+  width: auto; 
+}*/
+
+
+.carousel {
+  /*width: 100%; */ /* This makes carousel controls fit viewport width */
+  margin-bottom: 20px;
+}
+
+/* Center carousel images */
+.carousel img {
+  margin: 0 auto;
+}
+
+/* Remove carousel control background */
+.carousel-control.left, .carousel-control.right {
+    background-image: none;
+}
+
+/* Make links black in event blocks */
+.event > .well a {
+	color: black;
+}
+
+/* Chane hover link style in event block */
+.event > .well a:hover {
+	color: orange;
+}
+
+/* Add underline to map links */
+a.map{
+	border-bottom: dotted 1px black;
+    text-decoration: none;
+}
+
+/* Event image block */
+.event > .carousel-inner {
+	padding-bottom: 56.25%; /* Make height of image div based on width */
+	background-repeat: no-repeat; 
+	background-size: cover; /* Image will fill all div */
+}
+
+/* Color of genre link at the corner in event image */
+.event > .carousel-inner > .carousel-caption a{
+	color: white;
+}
+
+/* Make bg solid at hovering genre link */
+.event > .carousel-inner > div.carousel-caption:hover{
+	background: rgba(0, 0, 0, 1);
+}
+
+/* Position and style of genre link at the corner in event image */
+.event > .carousel-inner > .carousel-caption {
+    right: auto;
+    left: 2%;
+    top: 2%;
+	bottom: auto;
+	padding: 0 5px 0 5px; /* add some padding to left and right for better bg looking */
+	background: rgba(0, 0, 0, 0.35); /* transparent bg */
+}
+
+#add-event-genre { width: auto !important; }
+
+.dropdown-labeled {
+	width: 100px;
+}
+
+@media only screen and (min-width : 768px) {
+
+	/* Move 3rd item on new row at small devices */
+	.event:nth-child(3n+1){
+		clear: both;
+	}
+}
+
+/* Move 4th item on new row at medium and large devices */
+@media only screen and (min-width: 992px) {
+	.event:nth-child(3n+1){
+		clear: none;
+	}
+	.event:nth-child(4n+1){
+		clear: both;
+	}
+}
+
+/* Add scrolling to genre list at extra small devices 
+@media screen and (max-width: 767px){
+    .columns{
+        height: 200px;
+        overflow-y:scroll;
+    }
+}*/
