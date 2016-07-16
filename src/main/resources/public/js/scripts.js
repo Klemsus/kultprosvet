@@ -7,4 +7,4 @@ $(function() {
             option = $(target).data('collapse') ? 'show' : $this.data()
             $(target).collapse(option)
     })
-})
+});

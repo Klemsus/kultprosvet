@@ -23,7 +23,7 @@ ${attr}="${input.attrs[attr]}"
 </#macro>
 
 <#macro form_horizontal id action inputs submit={"type":"submit", "name":"submit", "id":"submit"}>
-<form class="form-horizontal" role="form" id="${id}">
+<form class="form-horizontal" role="form" id="${id}" enctype="multipart/form-data">
   <#list inputs as inp>
   <div class="form-group">
     <#if inp?is_sequence>

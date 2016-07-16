@@ -150,11 +150,11 @@
       <#if place=="body">
       <#assign genres={"rock":"Рок", "rap":"Рэп и хип-хоп", "jazz":"Джаз и блюз"}>
       <#assign event_inputs= [
-        {"id":"eventName", "label":"Название", "type":"text", "required":true},
+        {"id":"name", "label":"Название", "type":"text", "required":true},
         {"id":"poster", "label":"Постер", "type":"file", "required":true, "attrs":{"accept":"image/jpg,image/jpeg,image/png,image/gif"}},
         {"id":"anons", "input":"textarea", "label":"Анонс", "required":true, "attrs":{"rows":"3"}},
         {"id":"genres", "input":"select", "label":"Стили", "multiple":true, "options":genres},
-        [{"id":"date", "type":"date", "label":"Дата", "icon":"calendar", "required":true, "readonly":true},{"id":"time", "type":"time", "icon":"time", "required":true, "readonly":true}],
+        [{"id":"date", "type":"date", "label":"Дата", "icon":"calendar", "required":true, "readonly":true},{"id":"time", "type":"time", "label":"Время", "icon":"time", "required":true, "readonly":true}],
         {"id":"location", "label":"Место", "type":"text", "required":true}
       ]>
       <@form_horizontal "add_event_form" "/event" event_inputs {"type":"button", "name":"Добавить", "style":"success", "classes":"btn-block", "id":"add-event"}/>
@@ -267,9 +267,10 @@
   <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/dropdowns-enhancement.js"></script>
   <script type="text/javascript" src="js/select2.min.js"></script>
-  <script src="js/bootstrap-clockpicker.min.js"></script>
-  <script src="js/bootstrap-datepicker.min.js"></script>
-  <script src="js/bootstrap-datepicker.ru.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap-clockpicker.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap-datepicker.ru.min.js"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
 
   <#include "js.ftl">
   
