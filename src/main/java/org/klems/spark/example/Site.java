@@ -40,6 +40,7 @@ public class Site {
       return id;
     });
     get("/events", (req, res) -> EventController.getEvents(), (list) -> gson.toJson(list));
+    get("/genres", (req, res) -> EventController.getGenres(), (list) -> gson.toJson(list));
   }
    
 }

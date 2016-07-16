@@ -69,4 +69,8 @@ public class EventController {
     };
   }
 
+  static List<Genre> getGenres() throws SQLException {
+    return GENRE_DAO.queryForAll();
+  }
+
 }
