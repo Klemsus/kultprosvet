@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <#setting date_format="dd MMMMM">
-<#setting time_format="hh:mm">
+<#setting time_format="HH:mm">
 <#include "bootstrap/bootstrap.ftl">
 <#include "event.ftl">
 <#assign title="Test">
@@ -46,8 +46,7 @@
       {"name":city, "dropdown": [
         {"href":"#", "name":"Ижевск"}
         ]},
-      {"name":"Информация", "modal":"info"},
-      {"name":"Добавить мероприятие", "modal":"add-event-modal"}
+      {"name":"Информация", "modal":"info"}
     ]>
     <@navbar links=nav_links brand="КультProСвет" ; place>
       <#if place == "fixed_right">
@@ -146,53 +145,44 @@
     </@modal>
 
     <!-- Add event modal window -->
-    <@modal "add-event-modal" "Добавление мероприятия"; place>
+    <#-- <@modal "add-event-modal" "Добавление мероприятия"; place>
       <#if place=="body">
-      <#assign genres={"rock":"Рок", "rap":"Рэп и хип-хоп", "jazz":"Джаз и блюз"}>
       <#assign event_inputs= [
         {"id":"name", "label":"Название", "type":"text", "required":true},
         {"id":"poster", "label":"Постер", "type":"file", "required":true, "attrs":{"accept":"image/jpg,image/jpeg,image/png,image/gif"}},
         {"id":"anons", "input":"textarea", "label":"Анонс", "required":true, "attrs":{"rows":"3"}},
-        {"id":"genres", "input":"select", "label":"Стили", "multiple":true, "options":genres},
         [{"id":"date", "type":"date", "label":"Дата", "icon":"calendar", "required":true, "readonly":true},{"id":"time", "type":"time", "label":"Время", "icon":"time", "required":true, "readonly":true}],
         {"id":"location", "label":"Место", "type":"text", "required":true}
       ]>
       <@form_horizontal "add_event_form" "/event" event_inputs {"type":"button", "name":"Добавить", "style":"success", "classes":"btn-block", "id":"add-event"}/>
-      <#--
       <#elseif place=="footer">
         <@link {"type":"submit", "style":"primary", "name":"Добавить"} true/>
-      -->
-      </#if>
-    </@modal>
+      </#if> 
+    </@modal> -->
 
     <!-- Ad carousel -->
-    <#assign carousel_images=[
+    <#-- <#assign carousel_images=[
       {"src":"http://svizh.ru/uploads/top_slider/file/81/17-04_7__974_92.jpg"},
       {"src":"https://svizh.ru/uploads/top_slider/file/95/12-02_NobodyOne_974_92.jpg"}
     ]>
-    <@carousel "event_carousel" carousel_images />
+    <@carousel "event_carousel" carousel_images /> -->
     <!-- /.carousel -->
 	
     <!-- Buy ticket modal -->
-    <@modal "buyTicket" "Купить билет" ; place>
+    <#-- <@modal "buyTicket" "Купить билет" ; place>
     <#if place=="body">
       <#assign buy_inputs = [
         {"id":"price", "placeholder":"Цена", "type":"text", "icon":"rub", "required":true, "disabled":true}
       ]>
       <@form_horizontal "buy_form" "/buy" buy_inputs {"type":"submit", "name":"Купить", "style":"danger", "id":"buy"} />
     </#if>
-    </@modal>
+    </@modal> -->
     <!-- buy -->
 
     <div class="container">
 	
     <!-- Filter bar -->
     <#assign filter_links = [
-      {"name":"Все стили", "dropdown": [
-        {"href":"#", "name":"Все стили", "label":"6"},
-        {"href":"#", "name":"Джаз и блюз", "label":"3"},
-        {"href":"#", "name":"Рэп и хип-хоп", "label":"3"}
-        ]},
       {"name":"Все площадки", "dropdown": [
         {"href":"#", "name":"Все площадки", "label":"6"},
         {"href":"#", "name":"Метрополис", "label":"3"},
@@ -226,24 +216,10 @@
       </#if>
     </@navbar>
     
-    <#assign events_by_group = [
-      {"group":"Сегодня", "events":[
-        {"id":"1", "poster":"http://kudago.com/media/thumbs/xl/images/event/a4/26/a42610f29b2cc9a54e048868c47fff8d.jpg","genre":"Рэп и хип-хоп","name":"Концерт Oxxxymiron",
-         "anons":"Большой весенний концерт рэпера-эмигранта Oxxxymiron, который продолжает экспансию на клубные площадки ... Больше текста","date":"30 Март"?date,"time":"18:00"?time,"location":"Клуб Dropclub"},
-        {"id":"2", "poster":"http://kudago.com/media/thumbs/xl/images/event/cf/0a/cf0afc9004b7f6f2777875eaa952fc14.jpg","genre":"Джаз и блюз","name":"Концерт Bohren & der Club of Gore", "age":"16",
-         "anons":"Немецкие апологеты тёмного джаза и сумрачного даунтемпо Bohren & der Club of Gore планируют порадовать","date":"30 Март"?date,"time":"18:00"?time,"location":"Клуб Метрополис"}
-      ]}
-      {"group":"Март 2016", "events":[
-        {"id":"1", "poster":"http://kudago.com/media/thumbs/xl/images/event/a4/26/a42610f29b2cc9a54e048868c47fff8d.jpg","genre":"Рэп и хип-хоп","name":"Концерт Oxxxymiron",
-         "anons":"Большой весенний концерт рэпера-эмигранта Oxxxymiron, который продолжает экспансию на клубные площадки ... Больше текста","date":"30 Март"?date,"time":"18:00"?time,"location":"Клуб Dropclub"},
-        {"id":"2", "poster":"http://kudago.com/media/thumbs/xl/images/event/cf/0a/cf0afc9004b7f6f2777875eaa952fc14.jpg","genre":"Джаз и блюз","name":"Концерт Bohren & der Club of Gore", "age":"16",
-         "anons":"Немецкие апологеты тёмного джаза и сумрачного даунтемпо Bohren & der Club of Gore планируют порадовать","date":"30 Март"?date,"time":"18:00"?time,"location":"Клуб Метрополис"}
-      ]}
-    ]>
-    <#list events_by_group as events>
+    <#list events_by_group as date, events>
       <div class="row">
-      <h2>${events.group}</h2>
-      <#list events.events as evnt>
+      <h2>${date}</h2>
+      <#list events as evnt>
         <@event evnt />
       </#list>
       </div>
@@ -265,6 +241,7 @@
   <!-- For local use -->
   <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
   <script type="text/javascript" src="js/dropdowns-enhancement.js"></script>
   <script type="text/javascript" src="js/select2.min.js"></script>
   <script type="text/javascript" src="js/bootstrap-clockpicker.min.js"></script>
