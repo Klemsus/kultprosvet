@@ -26,6 +26,11 @@ body {
   width: auto; 
 }*/
 
+/* Collapse description to show more/less */
+.collapse-desc {
+  min-height: 60px;
+}
+
 
 .carousel {
   /*width: 100%; */ /* This makes carousel controls fit viewport width */
@@ -55,7 +60,7 @@ body {
 /* Add underline to map links */
 a.map{
 	border-bottom: dotted 1px black;
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* Event image block */
