@@ -24,7 +24,7 @@ public class Site {
   }
   
   public static void initSpark() {
-    port(Integer.getInteger("PORT", 8080));
+    port(Integer.valueOf(System.getenv().getOrDefault("PORT", "8080")));
     Initialization.initRestAssured();
     FreeMarkerEngine fme = Initialization.initFreemarker();
     staticFileLocation("/public");
