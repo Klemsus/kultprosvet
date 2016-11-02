@@ -2,23 +2,18 @@ package org.klems.spark.example;
 
 
 import com.google.gson.Gson;
-
 import java.io.IOException;
 import java.sql.SQLException;
-
-import spark.ModelAndView;
-
-import static spark.Spark.get;
-import static spark.Spark.staticFileLocation;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
-
 import org.apache.commons.lang3.time.DateUtils;
-
+import spark.ModelAndView;
+import static spark.Spark.get;
+import static spark.Spark.port;
+import static spark.Spark.staticFileLocation;
 import spark.template.freemarker.FreeMarkerEngine;
 
 
@@ -29,6 +24,7 @@ public class Site {
   }
   
   public static void initSpark() {
+    port(80);
     Initialization.initRestAssured();
     FreeMarkerEngine fme = Initialization.initFreemarker();
     staticFileLocation("/public");
