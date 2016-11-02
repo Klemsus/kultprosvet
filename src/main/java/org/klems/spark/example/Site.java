@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 import org.apache.commons.lang3.time.DateUtils;
 import spark.ModelAndView;
 import static spark.Spark.get;
+import static spark.Spark.port;
 import static spark.Spark.staticFileLocation;
 import spark.template.freemarker.FreeMarkerEngine;
 
@@ -23,6 +24,7 @@ public class Site {
   }
   
   public static void initSpark() {
+    port(Integer.valueOf(System.getenv("PORT")));
     Initialization.initRestAssured();
     FreeMarkerEngine fme = Initialization.initFreemarker();
     staticFileLocation("/public");
