@@ -54,23 +54,6 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>exec-maven-plugin</artifactId>
-              <version>1.5.0</version>
-              <executions>
-                <execution>
-                  <id>spark</id>
-                  <phase>package</phase>
-                  <goals>
-                    <goal>java</goal>
-                  </goals>
-                </execution>
-              </executions>
-              <configuration>
-                <mainClass>org.klems.spark.example.Site</mainClass>
-              </configuration>
-            </plugin>
             <!--<plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <executions>
