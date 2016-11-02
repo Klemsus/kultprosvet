@@ -1,1 +1,1 @@
-web: mvn exec:java -Dexec.mainClass="org.klems.spark.example.Site"
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* org.klems.spark.example.Site
