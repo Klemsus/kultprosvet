@@ -34,6 +34,7 @@ public class Site {
       return new ModelAndView(root, "index.ftl");
     }, fme);
     get("/events", (req, res) -> EventController.getEvents(), (list) -> new Gson().toJson(list));
+    get("/tickets", (req, res) -> EventController.getTicketsJson(req.queryParams("id")));
   }
    
 }
