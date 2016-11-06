@@ -59,7 +59,8 @@ $(document).ready(function() {
   });
   
 // Click to only happen on buy-ticket-link links
-  $(".buy-ticket-link").click(function(){ 
+  $(".buy-ticket-link").click(function(){
+          console.log($(this));
           $("#price").val($(this).data('price'));
   });
 });

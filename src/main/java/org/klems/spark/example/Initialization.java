@@ -14,8 +14,11 @@ public class Initialization {
 
   public static void initRestAssured() {
     RestAssured.baseURI = "https://api.ticketscloud.org/";
-    RestAssured.requestSpecification = new RequestSpecBuilder().addHeader("Authorization", "key 728509f20e2041b5be2879f30c320263").build();
-    RestAssured.proxy = new ProxySpecification("192.168.254.49", 8080, "http");
+    RestAssured.requestSpecification = new RequestSpecBuilder()
+                                        .addHeader("Authorization", "key 728509f20e2041b5be2879f30c320263")
+                                        .addHeader("Accept", "application/json")
+                                        .build();
+    //RestAssured.proxy = new ProxySpecification("192.168.254.49", 8080, "http");
   }
   
   public static FreeMarkerEngine initFreemarker() {

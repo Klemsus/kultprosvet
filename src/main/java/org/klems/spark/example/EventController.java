@@ -13,13 +13,13 @@ public class EventController {
 
   static List<Event> getEvents() {
     Response resp = when().get("/v1/services/simple/events");
-    System.out.println(resp.body().asString());
+    //System.out.println(resp.body().asString());
     return new Gson().fromJson(resp.body().asString(), new TypeToken<List<Event>>(){}.getType());
   }
   
   static String getTicketsJson(String id) {
     String tickets = when().get("/v1/resources/events/" + id + "/tickets").body().asString();
-    System.out.println(id + ": " + tickets);
+    //System.out.println(id + ": " + tickets);
     return tickets;
   }
   

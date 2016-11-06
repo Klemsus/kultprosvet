@@ -25,12 +25,22 @@ public class Event {
   
   private Venue venue;
   
+  private List<Set> sets;
+  
   @SerializedName("tickets_amount_vacant")
   private Integer tickets_vacant;
   
   @SerializedName("age_rating")
   private Integer age;
 
+  public List<Set> getSets() {
+    return sets;
+  }
+
+  public Integer getTickets_vacant() {
+    return tickets_vacant;
+  }
+  
   public Date getDate() {
     Matcher matcher = Pattern.compile("DTSTART;VALUE=DATE-TIME:(\\d+T\\d+Z)").matcher(lifetime);
     matcher.find();
@@ -144,6 +154,50 @@ public class Event {
     public List<Double> getCoordinates() {
       return coordinates;
     }
+    
+  }
+
+  public static class Set {
+    
+    private String id;
+    private int pos;
+    private String name;
+    private int amount;
+    private int amount_vacant;
+    private double price;
+    //private List<Rule> rules;
+
+    public String getId() {
+      return id;
+    }
+
+    public int getPos() {
+      return pos;
+    }
+
+    public String getName() {
+      return name;
+    }
+
+    public int getAmount() {
+      return amount;
+    }
+
+    public int getAmount_vacant() {
+      return amount_vacant;
+    }
+
+    public double getPrice() {
+      return price;
+    }
+    
+  }
+
+  public static class Rule {
+
+    private String id;
+    private boolean current;
+    private double price;
     
   }
   

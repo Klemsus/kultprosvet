@@ -80,14 +80,14 @@ a.map{
 	background: rgba(0, 0, 0, 1);
 }
 
-/* Position and style of genre link at the corner in event image */
-.event > .carousel-inner > .carousel-caption {
-    right: auto;
-    left: 2%;
+/* Position and style of price at the corner in event image */
+.price {
+    left: auto;
+    right: 2%;
     top: 2%;
-	bottom: auto;
-	padding: 0 5px 0 5px; /* add some padding to left and right for better bg looking */
-	background: rgba(0, 0, 0, 0.35); /* transparent bg */
+    bottom: auto;
+    padding: 0 5px 0 5px; /* add some padding to left and right for better bg looking */
+    //background: rgba(0, 0, 0, 0.35); /* transparent bg */
 }
 
 #add-event-genre { width: auto !important; }

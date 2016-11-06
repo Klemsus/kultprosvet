@@ -169,14 +169,14 @@
     <!-- /.carousel -->
 	
     <!-- Buy ticket modal -->
-    <#-- <@modal "buyTicket" "Купить билет" ; place>
+    <@modal "buyTicket" "Купить билет" ; place>
     <#if place=="body">
       <#assign buy_inputs = [
         {"id":"price", "placeholder":"Цена", "type":"text", "icon":"rub", "required":true, "disabled":true}
       ]>
       <@form_horizontal "buy_form" "/buy" buy_inputs {"type":"submit", "name":"Купить", "style":"danger", "id":"buy"} />
     </#if>
-    </@modal> -->
+    </@modal>
     <!-- buy -->
 
     <div class="container">
